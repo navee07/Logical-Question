@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Squares {
+	/**
+	 * @author Naveen.s
+	 * @Description : To find out the No.of Square Integers between two ranges
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		/*Logical Questions - Sherlock and Squares*/
+
+		//To Read the input from user
+		Scanner input_Range = new Scanner(System.in);
+
+		int testCaseNumber = input_Range.nextInt();
+
+		ArrayList<Integer> arr_StartingRange = new ArrayList<Integer>();
+		ArrayList<Integer> arr_EndingRange = new ArrayList<Integer>();
+
+		for(int i=1;i<=testCaseNumber;i++)	{
+			int count_StartInteger = input_Range.nextInt();
+			int count_EndInteger = input_Range.nextInt();
+			if(count_StartInteger==0)	{
+				count_StartInteger = 1;
+			}
+			arr_StartingRange.add(count_StartInteger);
+			arr_EndingRange.add(count_EndInteger);
+
+		}
+
+		for(int arr_Iterator =0;arr_Iterator<arr_StartingRange.size();arr_Iterator++)	{
+			int count=(int)(Math.floor(Math.sqrt(arr_EndingRange.get(arr_Iterator)))-Math.ceil(Math.sqrt(arr_StartingRange.get(arr_Iterator)))+1);
+			System.out.println(count);	
+		}
+	}
+}
